@@ -1,0 +1,21 @@
+body {
+	display: flex;
+}
+
+#buttons {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+input[type=number], #time {
+	font-family: "Montserrat";
+	font-size: 3vh;
+	white-space: pre-line;
+}
+
+button {
+	font-family: "Montserrat";
+	font-size: 3vh;
+	margin-top: 1vh;
+}

@@ -1,0 +1,26 @@
+<html>
+<head>
+<link rel="stylesheet" href="main.css">
+	<script src="https://unpkg.com/delaunator@5.0.0/delaunator.min.js"></script>
+
+<script type="text/javascript" src="geometry.js"></script>
+<script type="text/javascript" src="halfedgemesh.js"></script>
+<script type="text/javascript" src="advancing_front.js"></script>
+<script type="text/javascript" src="delaunay.js"></script>
+<script type="text/javascript" src="lib/fast-delaunay.js"></script>
+<script type="text/javascript" src="delaunay_harness.js"></script>
+	<!-- <script type="text/javascript" src="voronoi.js"></script> -->
+</head>
+<body>
+	<canvas id="testCanvas" width="1000" height="1000"></canvas>
+  <div id="buttons">
+    <input type="number" id="vertexCount" value="1000"/>
+    <button onclick="regenerate()">Generate new points</button>
+    <button onclick="tick()">Advance</button>
+    <button onclick="finish()">Complete</button>
+    <button onclick="delaunate()">Use Delaunator</button>
+    <button onclick="fastdelaunate()">Use fast-delaunay</button>
+    <div id="time"></div>
+  </div>
+</body>
+</html>

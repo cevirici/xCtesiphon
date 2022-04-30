@@ -1,0 +1,18 @@
+<html>
+<head>
+<link rel="stylesheet" href="main.css">
+	<script src="https://unpkg.com/delaunator@5.0.0/delaunator.min.js"></script>
+<script type="text/javascript" src="geometry.js"></script>
+<script type="text/javascript" src="lloyd.js"></script>
+<script type="text/javascript" src="lloyd_harness.js"></script>
+</head>
+<body>
+	<canvas id="testCanvas" width="1000" height="1000"></canvas>
+  <div id="buttons">
+    <input type="number" id="vertexCount" value="1000"/>
+    <button onclick="regenerate()">Generate new points</button>
+    <button onclick="tick()">Relax</button>
+    <div id="time"></div>
+  </div>
+</body>
+</html>

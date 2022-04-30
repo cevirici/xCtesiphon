@@ -1,0 +1,37 @@
+<html>
+<head>
+	<script src="https://unpkg.com/delaunator@5.0.0/delaunator.min.js"></script>
+
+<script id="fragScript" type="text/glsl">
+
+  #ifdef GL_ES
+  precision lowp float;
+  #endif
+
+  #define PI 3.14159265359
+
+  uniform float uTime;
+
+  void main(void) {
+
+    //divide pixel location by canvas width and height
+    //to get values are now between 0.0 and 1.0
+    vec2 st = gl_FragCoord.xy;
+    //some fun functions for picking colors
+    float r = sin(uTime+8.*PI*st.x);
+    float g = fract( sin(3.*PI*st.y) );   
+    float b = sin(uTime+PI*st.x*st.y);
+    vec3 color = vec3(r,b,g);
+    gl_FragColor = vec4(color,1.0);
+  }
+</script>
+<script type="text/javascript" src="geometry.js"></script>
+<script type="text/javascript" src="halfedgemesh.js"></script>
+<script type="text/javascript" src="advancing_front.js"></script>
+<script type="text/javascript" src="delaunay.js"></script>
+	<!-- <script type="text/javascript" src="voronoi.js"></script> -->
+</head>
+<body>
+	<canvas id="testCanvas" width="1000" height="1000"></canvas>
+</body>
+</html>
